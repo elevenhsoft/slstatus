@@ -65,5 +65,22 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	{ separator, "  ",                              NULL },
+        { netspeed_rx, "[ ^c#A3BE8C^DOWN: ^d^%s ]",     "eno1" },
+	{ separator, "  ",                              NULL },
+        { netspeed_tx, "[ ^c#BF616A^UP: ^d^%s ]",        "eno1" },
+	{ separator, "  ",                              NULL },
+        { run_command, "%s",   				"/home/savage/projekty/slstatus/vol.sh" },
+	{ separator, "  ",                              NULL },
+        { uptime, "[ ^c#B48EAD^UPTIME: ^d^%s ]",        NULL },
+	{ separator, "  ",                              NULL },
+        { hostname, "[ ^c#EBCB8B^%s",       		NULL },
+	{ separator, "^d^: ",				NULL },
+	{ kernel_release, "%s ]",			NULL }, 
+	{ separator, "  ",                     		NULL },
+        { cpu_perc, "[ ^c#EBCB8B^CPU: ^d^%s%% ]",      	NULL },
+	{ separator, "  ",                      	NULL },
+        { ram_perc, "[ ^c#EBCB8B^MEM: ^d^%s%% ]",      	NULL },
+	{ separator, "  ",				NULL },
+	{ datetime, "[ ^c#D08770^%s ^d^]",      	"%F %T" },
 };
